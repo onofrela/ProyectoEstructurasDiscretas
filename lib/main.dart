@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:proyecto_ed/books/books.dart';
+import 'package:proyecto_ed/data/book_card.dart';
+import 'package:proyecto_ed/hokkori_ui/app_card.dart';
+import 'package:proyecto_ed/hokkori_ui/default_appbar.dart';
+import 'package:proyecto_ed/hokkori_ui/default_page/default_page.dart';
+import 'package:proyecto_ed/hokkori_ui/section_title.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,9 +30,17 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Bottom Text'),
+    return DefaultPage(
+      appBar: const DefaultAppBar(title: 'Bibliografía para Estructuras Discretas'),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          const SectionTitle('Libros'),
+          AppCardList(
+            items: books.map((book) => BookData(book: book)).toList(),
+          ),
+        ],
       ),
     );
   }
