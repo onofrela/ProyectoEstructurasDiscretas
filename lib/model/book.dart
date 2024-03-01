@@ -9,6 +9,7 @@ class Book {
   String? translator; // Traductor del libro (opcional)
   String? imagePath; // Ruta de la imagen (opcional)
   String? description; // Ruta de la imagen (opcional)
+  String? whereIs; // Ruta de la imagen (opcional)
 
   Book({
     required this.title,
@@ -21,5 +22,6 @@ class Book {
     this.translator,
     this.imagePath,
     this.description,
+    this.whereIs,
   });
 }

@@ -20,12 +20,15 @@ class BookPage extends StatelessWidget {
         children: [
           const SectionTitle('Datos'),
           AppCard(body: BookDataWithoutButton(book: book), isFirst: true, isLast: true),
-          const SectionTitle('Ubicación'),
-          const AppCard(body: Text('No se, aún no hemos visto xd'), isFirst: true, isLast: true,),
           if (book.description != null) // Agrega el condicional aquí
             ...[
               const SectionTitle('Temario'),
               AppCard(body: Text(book.description!), isFirst: true, isLast: true),
+            ],
+          if (book.whereIs != null) // Agrega el condicional aquí
+            ...[
+              const SectionTitle('Ubicación'),
+              AppCard(body: Text(book.whereIs!), isFirst: true, isLast: true),
             ],
         ],
       ),
